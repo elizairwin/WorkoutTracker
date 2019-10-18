@@ -1,0 +1,48 @@
+<form>
+  <div class="row d-flex justify-content-center">
+    <h2 id="alert">Please log your lift below.</h2>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="weight" id="weight">
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="reps" id="reps">
+    </div>
+      <div class="col-md-2">
+      <input type="text" class="form-control" placeholder="minutes" id="minutes">
+    </div>
+    <div class="col-md-2">
+      <input type="text" class="form-control" placeholder="seconds" id="seconds">
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-primary" id="submit-lift">Submit</button>
+    </div>
+  </div>
+</form>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Reps</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each lifts}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.weight}}</td>
+      <td>{{this.reps}}</td>
+      <td>{{this.minutes}}:{{this.seconds}}</td>
+      <td>{{this.created}}</td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+</table>
