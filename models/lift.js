@@ -10,6 +10,6 @@ const LiftSchema = new Schema({
   created: { type: Date, default: Date.now },
 });
 
-const Lift = mongoose.model('lift', LiftSchema);
+const Lift = mongoose.model('Lift', LiftSchema);
 
 module.exports = Lift;

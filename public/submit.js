@@ -5,6 +5,9 @@ const $minutes = $('#minutes');
 const $seconds = $('#seconds');
 const $distance = $('#distance');
 
+// var for alerts
+const $alert = $('#alert');
+
 // submit buttons for workouts
 const $submitRun = $('#submit-run');
 const $submitLift = $('#submit-lift');
@@ -19,20 +22,17 @@ function postIt(route, object) {
         });
 }
 
-// var for errors
-const $error = $('#error');
-
 function postRun() {
     const distance = $distance.val().trim();
     const minutes = $minutes.val().trim();
     const seconds = $seconds.val().trim();
 
     if (isNaN(distance) || distance < 0) {
-        $error.text('Please enter a valid distance.');
+        $alert.text('Please enter a valid distance.');
     } else if (isNaN(minutes) || minutes < 0) {
-        $error.text('Please enter valid minutes.');
+        $alert.text('Please enter valid minutes.');
     } else if (isNaN(seconds) || seconds < 0) {
-        $error.text('Please enter valid seconds.');
+        $alert.text('Please enter valid seconds.');
 
     } else {
         const runObject = {
@@ -41,7 +41,7 @@ function postRun() {
             seconds,
         };
 
-    postIt('run', runObject);
+    postIt('Run', runObject);
     }
 }
 
@@ -52,23 +52,23 @@ function postLift() {
     const seconds = $seconds.val().trim();
 
     if (isNaN(weight) || weight < 1) {
-        $error.text('Please enter a valid weight.');
+        $alert.text('Please enter a valid weight.');
     } else if (isNaN(reps) || reps < 1) {
-        $error.text('Please enter valid reps.');
+        $alert.text('Please enter valid reps.');
     } else if (isNaN(minutes) || minutes < 0) {
-        $error.text('Please enter valid minutes.');
+        $alert.text('Please enter valid minutes.');
     } else if (isNaN(seconds) || seconds < 0) {
-        $error.text('Please enter valid seconds.');
+        $alert.text('Please enter valid seconds.');
 
     } else {
         const liftObject = {
             weight,
             reps,
             minutes,
-            seconds,s
+            seconds,
         };
 
-        postIt('lift', liftObject);
+        postIt('Lift', liftObject);
     }
 }
 
