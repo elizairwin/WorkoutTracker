@@ -22,6 +22,8 @@ In this version, the user can log a run or a lift.
 1. Open up command line
 2. Type node server.js
 
+Or visit heroku link: https://desolate-oasis-54176.herokuapp.com/
+
 ## My Role in App Developement: 
 * Performed setup and installation
 * Created files
